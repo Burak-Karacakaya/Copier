@@ -1,0 +1,15 @@
+/Users/burakkaracakaya/Projects/Copier/Client/bin/Debug/net7.0/Client
+/Users/burakkaracakaya/Projects/Copier/Client/bin/Debug/net7.0/Client.deps.json
+/Users/burakkaracakaya/Projects/Copier/Client/bin/Debug/net7.0/Client.runtimeconfig.json
+/Users/burakkaracakaya/Projects/Copier/Client/bin/Debug/net7.0/Client.dll
+/Users/burakkaracakaya/Projects/Copier/Client/bin/Debug/net7.0/Client.pdb
+/Users/burakkaracakaya/Projects/Copier/Client/obj/Debug/net7.0/Client.csproj.AssemblyReference.cache
+/Users/burakkaracakaya/Projects/Copier/Client/obj/Debug/net7.0/Client.GeneratedMSBuildEditorConfig.editorconfig
+/Users/burakkaracakaya/Projects/Copier/Client/obj/Debug/net7.0/Client.AssemblyInfoInputs.cache
+/Users/burakkaracakaya/Projects/Copier/Client/obj/Debug/net7.0/Client.AssemblyInfo.cs
+/Users/burakkaracakaya/Projects/Copier/Client/obj/Debug/net7.0/Client.csproj.CoreCompileInputs.cache
+/Users/burakkaracakaya/Projects/Copier/Client/obj/Debug/net7.0/Client.dll
+/Users/burakkaracakaya/Projects/Copier/Client/obj/Debug/net7.0/refint/Client.dll
+/Users/burakkaracakaya/Projects/Copier/Client/obj/Debug/net7.0/Client.pdb
+/Users/burakkaracakaya/Projects/Copier/Client/obj/Debug/net7.0/Client.genruntimeconfig.cache
+/Users/burakkaracakaya/Projects/Copier/Client/obj/Debug/net7.0/ref/Client.dll
