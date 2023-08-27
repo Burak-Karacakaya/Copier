@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SKIw9GREG48tnlGYvDA/2p2NS6cFJBfohuEoMA/zj8CxzXnruTv4dgduxwaNutO4B1EaaG7Fo0S6d8jTKTgozA==",
+  "dgSpecHash": "v7tfRZDnpi1hNddDXej55W5/CLyTy6xMjix7fOoIzrVK8+nX5L1Vt2Eid3ZrmUGUqBxknr+wXdInA5GNTZzrxQ==",
   "success": true,
   "projectFilePath": "/Users/burakkaracakaya/Projects/Copier/Client/Client.csproj",
   "expectedPackageFiles": [
-    "/Users/burakkaracakaya/.nuget/packages/commandlineparser/2.9.1/commandlineparser.2.9.1.nupkg.sha512",
-    "/Users/burakkaracakaya/.nuget/packages/microsoft.extensions.filesystemglobbing/7.0.0/microsoft.extensions.filesystemglobbing.7.0.0.nupkg.sha512"
+    "/Users/burakkaracakaya/.nuget/packages/commandlineparser/2.9.1/commandlineparser.2.9.1.nupkg.sha512"
   ],
   "logs": []
 }

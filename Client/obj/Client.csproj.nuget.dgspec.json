@@ -41,10 +41,6 @@
             "CommandLineParser": {
               "target": "Package",
               "version": "[2.9.1, )"
-            },
-            "Microsoft.Extensions.FileSystemGlobbing": {
-              "target": "Package",
-              "version": "[7.0.0, )"
             }
           },
           "imports": [
