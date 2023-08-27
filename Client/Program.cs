@@ -19,11 +19,22 @@ internal class Program
 
     private static void StartWatching(CommandOptions options)
     {
-        var files = GetMatchingFiles(options);
-        var file = "";
+        var files = GetMatchingFiles(options).ToList();
+
+        foreach (var file in files)
+            WatchFile(Path.GetFileName(file.Path), options.SourceDirectoryPath);
+
+
+
+        Console.WriteLine(files.Select(a => a.Path).Aggregate((a, b) => a + ", " + b));
+        Console.ReadLine();
+    }
+
+    private static void WatchFile(string file, string directoryPath)
+    {
         var watcher = new FileSystemWatcher
         {
-            Path = options.SourceDirectoryPath,
+            Path = directoryPath,
             NotifyFilter = NotifyFilters.Size | NotifyFilters.LastWrite | NotifyFilters.FileName,
             Filter = file
         };
@@ -33,12 +44,7 @@ internal class Program
 
         //Start watching the file.
         watcher.EnableRaisingEvents = true;
-
-
-        Console.WriteLine(files.Select(a => a.Path).Aggregate((a, b) => a + ", " + b));
     }
-
-
 
     private static IEnumerable<FilePatternMatch> GetMatchingFiles(CommandOptions options)
     {
