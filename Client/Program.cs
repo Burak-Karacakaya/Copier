@@ -21,11 +21,11 @@ internal class Program
     }
 
     private static void StartWatching(CommandOptions options)
-    { 
+    {
         Console.WriteLine("StartWatching has started...");
 
         WatchFile(options.FileGlobalPattern, options.SourceDirectoryPath);
-        
+
     }
 
     private static void WatchFile(string filePattern, string sourceDirectoryPath)
@@ -37,13 +37,17 @@ internal class Program
             Filter = filePattern
         };
 
-        watcher.Changed += (sender, args) => Console.WriteLine("File has changed");
+        watcher.Changed += (sender, args) =>
+        {
+            if(args.ChangeType == WatcherChangeTypes.Changed)
+            Console.WriteLine($"{args.Name} file has changed.{args.ChangeType}");
+        };
         watcher.Renamed += (sender, args) => Console.WriteLine("File has been renamed");
 
         //Start watching the file.
         watcher.EnableRaisingEvents = true;
     }
 
-    
+
 }
 
