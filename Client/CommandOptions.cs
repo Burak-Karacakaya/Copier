@@ -14,6 +14,9 @@ namespace Client
         [Option('s', "sourceDirectoryPath", HelpText = "Parent directory where the files will be..")]
         public string SourceDirectoryPath { get; set; }
 
+        [Option('o', "overrideTargetFiles", Default = false, Required = false, HelpText ="If passed true, copier will override existing files at the target location.")]
+        public bool OverrideTargetFiles { get; set; }
+
         [Usage]
         public static IEnumerable<Example> Examples => new List<Example>()
         {
