@@ -26,46 +26,11 @@ internal class Program
             ? Directory.GetCurrentDirectory()
             : options.SourceDirectoryPath;
 
-        WatchFile(options);
+        IFileCopier copier = new FileCopier();
+        IOutputLogger outputLogger = new OutputLogger();
+        IFileWatcher fileWatcher = new FileWatcher(copier, outputLogger);
+        fileWatcher.Watch(options);
 
-    }
-
-    private static void WatchFile(CommandOptions options)
-    {
-        var watcher = new FileSystemWatcher
-        {
-            Path = options.SourceDirectoryPath,
-            NotifyFilter = NotifyFilters.Size | NotifyFilters.LastWrite | NotifyFilters.FileName,
-            Filter = options.FileGlobPattern
-        };
-
-        watcher.Changed += (sender, args) =>
-        {
-            if (args.ChangeType != WatcherChangeTypes.Changed) return;
-            if (options.Verbose)
-                Console.WriteLine($"{args.Name} file has changed.{args.ChangeType}");
-            CopyFile(options.SourceDirectoryPath, args.Name, options.DestinationDirectoryPath, options.OverwriteTargetFiles);
-
-        };
-        watcher.Renamed += (sender, args) =>
-        {
-            if(options.Verbose)
-                Console.WriteLine("File has been renamed");
-            CopyFile(options.SourceDirectoryPath, args.Name, options.DestinationDirectoryPath, options.OverwriteTargetFiles);
-        };
-
-        //Start watching the file.
-        watcher.EnableRaisingEvents = true;
-    }
-
-    private static void CopyFile(string sourceDirectoryPath ,string fileName, string targetDirectoryPath, bool overWriteTargetFile)
-    {
-        var absoluteSourceFilePath = Path.Combine(sourceDirectoryPath, fileName);
-        var absoluteTargetFilePath = Path.Combine(targetDirectoryPath, fileName);
-
-        if (File.Exists(absoluteTargetFilePath) && !overWriteTargetFile) return;
-
-        File.Copy(absoluteSourceFilePath, absoluteTargetFilePath, overWriteTargetFile);
     }
 }
 
