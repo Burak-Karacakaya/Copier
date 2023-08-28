@@ -29,6 +29,23 @@ namespace Client
                     SourceDirectoryPath = "C://Users/MyDocuments/Images",
                     FileGlobPattern = "*.jpg",
                     DestinationDirectoryPath = "C:/Users/MyDocuments/NewImages"
+                }),
+            new Example("Start the copier and overwrites the target files.", new UnParserSettings(){PreferShortName = true},
+                new CommandOptions
+                {
+                    SourceDirectoryPath = "C://Users/MyDocuments/Images",
+                    FileGlobPattern = "*.jpg",
+                    DestinationDirectoryPath = "C:/Users/MyDocuments/NewImages",
+                    OverwriteTargetFiles = true
+                }),
+            new Example("Start the copier and overwrites the target files and outputs verbose messages..", new UnParserSettings(){PreferShortName = true},
+                new CommandOptions
+                {
+                    SourceDirectoryPath = "C://Users/MyDocuments/Images",
+                    FileGlobPattern = "*.jpg",
+                    DestinationDirectoryPath = "C:/Users/MyDocuments/NewImages",
+                    OverwriteTargetFiles = true,
+                    Verbose = true
                 })
         };
 
