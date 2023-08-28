@@ -24,7 +24,11 @@ internal class Program
     {
         Console.WriteLine("StartWatching has started...");
 
-        WatchFile(options.FileGlobalPattern, options.SourceDirectoryPath);
+        var sourceDiroctoryPath = string.IsNullOrWhiteSpace(options.SourceDirectoryPath)
+            ? Directory.GetCurrentDirectory()
+            : options.SourceDirectoryPath;
+
+        WatchFile(options.FileGlobalPattern,sourceDiroctoryPath);
 
     }
 
@@ -47,7 +51,5 @@ internal class Program
         //Start watching the file.
         watcher.EnableRaisingEvents = true;
     }
-
-
 }
 
