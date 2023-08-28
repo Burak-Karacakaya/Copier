@@ -13,6 +13,5 @@
 /Users/burakkaracakaya/Projects/Copier/Client/obj/Debug/net7.0/Client.pdb
 /Users/burakkaracakaya/Projects/Copier/Client/obj/Debug/net7.0/Client.genruntimeconfig.cache
 /Users/burakkaracakaya/Projects/Copier/Client/obj/Debug/net7.0/ref/Client.dll
-/Users/burakkaracakaya/Projects/Copier/Client/bin/Debug/net7.0/Microsoft.Extensions.FileSystemGlobbing.dll
 /Users/burakkaracakaya/Projects/Copier/Client/obj/Debug/net7.0/Client.csproj.CopyComplete
 /Users/burakkaracakaya/Projects/Copier/Client/bin/Debug/net7.0/CommandLine.dll

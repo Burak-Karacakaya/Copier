@@ -1,7 +1,5 @@
 ﻿using Client;
 using CommandLine;
-using Microsoft.Extensions.FileSystemGlobbing;
-using Microsoft.Extensions.FileSystemGlobbing.Abstractions;
 
 //Copier "specify location", copy to "target folder"
 
@@ -24,32 +22,50 @@ internal class Program
     {
         Console.WriteLine("StartWatching has started...");
 
-        var sourceDiroctoryPath = string.IsNullOrWhiteSpace(options.SourceDirectoryPath)
+        options.SourceDirectoryPath = string.IsNullOrWhiteSpace(options.SourceDirectoryPath)
             ? Directory.GetCurrentDirectory()
             : options.SourceDirectoryPath;
 
-        WatchFile(options.FileGlobalPattern,sourceDiroctoryPath);
+        WatchFile(options);
 
     }
 
-    private static void WatchFile(string filePattern, string sourceDirectoryPath)
+    private static void WatchFile(CommandOptions options)
     {
         var watcher = new FileSystemWatcher
         {
-            Path = sourceDirectoryPath,
+            Path = options.SourceDirectoryPath,
             NotifyFilter = NotifyFilters.Size | NotifyFilters.LastWrite | NotifyFilters.FileName,
-            Filter = filePattern
+            Filter = options.FileGlobPattern
         };
 
         watcher.Changed += (sender, args) =>
         {
-            if(args.ChangeType == WatcherChangeTypes.Changed)
-            Console.WriteLine($"{args.Name} file has changed.{args.ChangeType}");
+            if (args.ChangeType != WatcherChangeTypes.Changed) return;
+            if (options.Verbose)
+                Console.WriteLine($"{args.Name} file has changed.{args.ChangeType}");
+            CopyFile(options.SourceDirectoryPath, args.Name, options.DestinationDirectoryPath, options.OverwriteTargetFiles);
+
         };
-        watcher.Renamed += (sender, args) => Console.WriteLine("File has been renamed");
+        watcher.Renamed += (sender, args) =>
+        {
+            if(options.Verbose)
+                Console.WriteLine("File has been renamed");
+            CopyFile(options.SourceDirectoryPath, args.Name, options.DestinationDirectoryPath, options.OverwriteTargetFiles);
+        };
 
         //Start watching the file.
         watcher.EnableRaisingEvents = true;
+    }
+
+    private static void CopyFile(string sourceDirectoryPath ,string fileName, string targetDirectoryPath, bool overWriteTargetFile)
+    {
+        var absoluteSourceFilePath = Path.Combine(sourceDirectoryPath, fileName);
+        var absoluteTargetFilePath = Path.Combine(targetDirectoryPath, fileName);
+
+        if (File.Exists(absoluteTargetFilePath) && !overWriteTargetFile) return;
+
+        File.Copy(absoluteSourceFilePath, absoluteTargetFilePath, overWriteTargetFile);
     }
 }
 
