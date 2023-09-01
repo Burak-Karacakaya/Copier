@@ -28,10 +28,11 @@ class Program
             ? Directory.GetCurrentDirectory()
             : options.SourceDirectoryPath;
 
-        PluginLoader loader = new();
+        IOutputLogger outputLogger = new OutputLogger();
+
+        IPluginLoader loader = new PluginLoader(outputLogger, options.Debug);
         
 
-        IOutputLogger outputLogger = new OutputLogger();
         IFileCopier copier = new FileCopier(outputLogger);
         IFileWatcher fileWatcher = new FileWatcher(copier, outputLogger);
 
