@@ -25,14 +25,14 @@
                 if (args.ChangeType != WatcherChangeTypes.Changed) return;
                 if (options.Verbose)
                     _outputLogger.Write($"{args.Name} file has changed.{args.ChangeType}");
-                _fileCopier.CopyFile(options.SourceDirectoryPath, args.Name, options.DestinationDirectoryPath, options.OverwriteTargetFiles);
+                _fileCopier.CopyFile(options, args.Name);
 
             };
             watcher.Renamed += (sender, args) =>
             {
                 if (options.Verbose)
                     _outputLogger.Write($"{args.OldName} has been renamed to {args.Name}");
-                _fileCopier.CopyFile(options.SourceDirectoryPath, args.Name, options.DestinationDirectoryPath, options.OverwriteTargetFiles);
+                _fileCopier.CopyFile(options, args.Name);
             };
 
             //Start watching the file.

@@ -14,6 +14,16 @@
             "related": ".xml"
           }
         }
+      },
+      "CopierPluginBase/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/CopierPluginBase.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CopierPluginBase.dll": {}
+        }
       }
     }
   },
@@ -39,11 +49,17 @@
         "lib/netstandard2.0/CommandLine.dll",
         "lib/netstandard2.0/CommandLine.xml"
       ]
+    },
+    "CopierPluginBase/1.0.0": {
+      "type": "project",
+      "path": "../CopierPluginBase/CopierPluginBase.csproj",
+      "msbuildProject": "../CopierPluginBase/CopierPluginBase.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "CommandLineParser >= 2.9.1"
+      "CommandLineParser >= 2.9.1",
+      "CopierPluginBase >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -70,7 +86,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/burakkaracakaya/Projects/Copier/CopierPluginBase/CopierPluginBase.csproj": {
+              "projectPath": "/Users/burakkaracakaya/Projects/Copier/CopierPluginBase/CopierPluginBase.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -104,7 +124,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.307/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.400/RuntimeIdentifierGraph.json"
       }
     }
   }

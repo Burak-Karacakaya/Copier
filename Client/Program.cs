@@ -2,9 +2,11 @@
 using CommandLine;
 
 //Copier "specify location", copy to "target folder"
-
-internal class Program
+class Program
 {
+
+    public static event Action ApplicationStarted = delegate { };
+
     private static void Main(string[] args)
     {
         Parser.Default.ParseArguments<CommandOptions>(args)
@@ -26,9 +28,14 @@ internal class Program
             ? Directory.GetCurrentDirectory()
             : options.SourceDirectoryPath;
 
-        IFileCopier copier = new FileCopier();
+        PluginLoader loader = new();
+        
+
         IOutputLogger outputLogger = new OutputLogger();
+        IFileCopier copier = new FileCopier(outputLogger);
         IFileWatcher fileWatcher = new FileWatcher(copier, outputLogger);
+
+        loader.Subscribe((IPreCopyEventBroadcaster)copier, (IPostCopyEventBroadcaster)copier);
         fileWatcher.Watch(options);
 
     }

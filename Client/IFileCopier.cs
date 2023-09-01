@@ -2,7 +2,7 @@
 {
     public interface IFileCopier
 	{
-        void CopyFile(string sourceDirectoryPath, string fileName, string targetDirectoryPath, bool overWriteTargetFile);
+        void CopyFile(CommandOptions options, string realizedFileName);
     }
 }
 

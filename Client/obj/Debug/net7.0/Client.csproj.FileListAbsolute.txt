@@ -15,3 +15,5 @@
 /Users/burakkaracakaya/Projects/Copier/Client/obj/Debug/net7.0/ref/Client.dll
 /Users/burakkaracakaya/Projects/Copier/Client/obj/Debug/net7.0/Client.csproj.CopyComplete
 /Users/burakkaracakaya/Projects/Copier/Client/bin/Debug/net7.0/CommandLine.dll
+/Users/burakkaracakaya/Projects/Copier/Client/bin/Debug/net7.0/CopierPluginBase.dll
+/Users/burakkaracakaya/Projects/Copier/Client/bin/Debug/net7.0/CopierPluginBase.pdb

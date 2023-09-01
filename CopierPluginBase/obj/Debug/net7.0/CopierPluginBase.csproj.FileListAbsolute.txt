@@ -1,0 +1,11 @@
+/Users/burakkaracakaya/Projects/Copier/CopierPluginBase/bin/Debug/net7.0/CopierPluginBase.deps.json
+/Users/burakkaracakaya/Projects/Copier/CopierPluginBase/bin/Debug/net7.0/CopierPluginBase.dll
+/Users/burakkaracakaya/Projects/Copier/CopierPluginBase/bin/Debug/net7.0/CopierPluginBase.pdb
+/Users/burakkaracakaya/Projects/Copier/CopierPluginBase/obj/Debug/net7.0/CopierPluginBase.GeneratedMSBuildEditorConfig.editorconfig
+/Users/burakkaracakaya/Projects/Copier/CopierPluginBase/obj/Debug/net7.0/CopierPluginBase.AssemblyInfoInputs.cache
+/Users/burakkaracakaya/Projects/Copier/CopierPluginBase/obj/Debug/net7.0/CopierPluginBase.AssemblyInfo.cs
+/Users/burakkaracakaya/Projects/Copier/CopierPluginBase/obj/Debug/net7.0/CopierPluginBase.csproj.CoreCompileInputs.cache
+/Users/burakkaracakaya/Projects/Copier/CopierPluginBase/obj/Debug/net7.0/CopierPluginBase.dll
+/Users/burakkaracakaya/Projects/Copier/CopierPluginBase/obj/Debug/net7.0/refint/CopierPluginBase.dll
+/Users/burakkaracakaya/Projects/Copier/CopierPluginBase/obj/Debug/net7.0/CopierPluginBase.pdb
+/Users/burakkaracakaya/Projects/Copier/CopierPluginBase/obj/Debug/net7.0/ref/CopierPluginBase.dll

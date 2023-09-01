@@ -1,24 +1,34 @@
 ﻿<Properties StartupConfiguration="{EC552BD2-4FD1-48FD-BF40-8C621965B8C1}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Client/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Client/PluginLoader.cs">
     <Files>
-      <File FileName="Client/Program.cs" Line="39" Column="1" />
-      <File FileName="Client/Commandoptions.cs" />
+      <File FileName="Client/Program.cs" Line="32" Column="1" />
+      <File FileName="Client/FileCopier.cs" />
+      <File FileName="Client/FileWatcher.cs" />
+      <File FileName="Client/IFileCopier.cs" />
+      <File FileName="Client/IOutputLogger.cs" />
+      <File FileName="Client/PluginLoader.cs" Line="16" Column="1" />
+      <File FileName="CopierPluginBase/PreCopyEventListener.cs" Line="6" Column="36" />
+      <File FileName="CopierPluginBase/PostcopyEventListener.cs" Line="6" Column="34" />
+      <File FileName="CopierPluginBase/ApplicationStartedEventListener.cs" Line="6" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Copier" selected="True">
-            <Node name="Client" expanded="True" />
+          <Node name="Copier" expanded="True">
+            <Node name="Client">
+              <Node name="PluginLoader.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.CopierPluginBase FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
 </Properties>
