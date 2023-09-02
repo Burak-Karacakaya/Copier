@@ -33,6 +33,12 @@ class Program
         IPluginLoader loader = new PluginLoader(outputLogger, options.Debug);
 
         IFileCopier copier = new FileCopier(outputLogger);
+
+        if(options.Delay > 0)
+        {
+            copier = new QueuedFileCopier();
+        }
+
         IFileWatcher fileWatcher = new FileWatcher(copier, outputLogger);
 
         loader.Subscribe((IPreCopyEventBroadcaster)copier, (IPostCopyEventBroadcaster)copier);

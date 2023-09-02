@@ -23,6 +23,9 @@ namespace Client
         [Option('e', "debug", Default = false, Required = false, HelpText = "Shows debug information")]
         public bool Debug { get; set; }
 
+        [Option('t', "delay", Default = 0, Required = false, HelpText = "Delays copy operation for a given time in seconds.")]
+        public int Delay { get; set; }
+
         [Usage]
         public static IEnumerable<Example> Examples => new List<Example>()
         {
