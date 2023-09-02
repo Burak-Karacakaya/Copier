@@ -1,0 +1,47 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug default",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Client/bin/Debug/net7.0/Client.dll",
+            "args": [
+                
+            ],
+            "cwd": "${workspaceFolder}/Client",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        },
+        {
+            "name": "Debug with arg",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/Client/bin/Debug/net7.0/Client.dll",
+            "args": [
+                "-s",
+                "/Users/burakkaracakaya/Desktop/test-files",
+                "-f",
+                "*.txt",
+                "-d",
+                "/Users/burakkaracakaya/Desktop/test-files/new-files",
+                "-v",
+                "-e",
+                "true"
+            ],
+            "cwd": "${workspaceFolder}/Client",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        }
+    ]
+}

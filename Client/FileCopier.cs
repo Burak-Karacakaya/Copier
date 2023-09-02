@@ -21,9 +21,9 @@
 
             if (File.Exists(absoluteTargetFilePath) && !options.OverwriteTargetFiles)
             {
-                _outputLogger.Write($"{fileName} exists. Skipped beacuse OverwriteTargetFile is set to false");
+                _outputLogger.LogDebug($"{fileName} exists. Skipped the cpoy operation beacuse OverwriteTargetFile is set to false");
                 return;
-            };
+            }
 
             PreCopy(absoluteSourceFilePath);
             File.Copy(absoluteSourceFilePath, absoluteTargetFilePath, options.OverwriteTargetFiles);

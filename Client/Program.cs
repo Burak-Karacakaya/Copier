@@ -22,13 +22,13 @@ class Program
 
     private static void StartWatching(CommandOptions options)
     {
-        Console.WriteLine("StartWatching has started...");
+        IOutputLogger outputLogger = new OutputLogger();
+        outputLogger.LogInfo("Please press any key to exit");
 
         options.SourceDirectoryPath = string.IsNullOrWhiteSpace(options.SourceDirectoryPath)
             ? Directory.GetCurrentDirectory()
             : options.SourceDirectoryPath;
 
-        IOutputLogger outputLogger = new OutputLogger();
 
         IPluginLoader loader = new PluginLoader(outputLogger, options.Debug);
 
