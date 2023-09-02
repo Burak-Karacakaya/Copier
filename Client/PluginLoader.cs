@@ -17,21 +17,25 @@ namespace Client
             Initialize();
         }
 
-        private void Initialize()
+        private string GetPluginsDirectory()
         {
-            var pluginDirectory = string.Empty;
 
 #if DEBUG
-            pluginDirectory = Path.Combine(Directory.GetCurrentDirectory(), "bin/Debug/net7.0/", "plugins");
+            return Path.Combine(Directory.GetCurrentDirectory(), "bin/Debug/net7.0/", "plugins");
 #else
-                pluginDirectory = Path.Combine(Directory.GetCurrentDirectory(), "plugins");
+            return Path.Combine(Directory.GetCurrentDirectory(), "plugins");
 #endif
+        }
 
+        private void Initialize()
+        {
+
+            var pluginDirectory = GetPluginsDirectory();
             if (!Directory.Exists($"{pluginDirectory}"))
             {
                 if (ShowDebugMessages)
                     _debugLogger.LogWarning("Cannot find plugins folder");
-                return;    
+                return;
             }
             var assemblyFiles = Directory.GetFiles(pluginDirectory, "*.dll");
 
