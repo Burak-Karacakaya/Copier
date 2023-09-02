@@ -31,7 +31,6 @@ class Program
         IOutputLogger outputLogger = new OutputLogger();
 
         IPluginLoader loader = new PluginLoader(outputLogger, options.Debug);
-        
 
         IFileCopier copier = new FileCopier(outputLogger);
         IFileWatcher fileWatcher = new FileWatcher(copier, outputLogger);
