@@ -1,0 +1,9 @@
+/Client/Obj/*
+.idea/*
+Copier.sln.DotSettings.user
+/Client/bin/*
+CopierPluginBase/obj/*
+CopierPluginBase/bin/*
+SamplePlugin/bin/*
+SamplePlugin/obj/*
+
