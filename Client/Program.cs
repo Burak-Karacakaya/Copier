@@ -20,7 +20,7 @@ class Program
         Console.ReadLine();
     }
 
-    private static void StartWatching(CommandOptions options)
+    private static async void StartWatching(CommandOptions options)
     {
         IOutputLogger outputLogger = new OutputLogger();
         outputLogger.LogInfo("Please press any key to exit");
@@ -29,20 +29,20 @@ class Program
             ? Directory.GetCurrentDirectory()
             : options.SourceDirectoryPath;
 
-
         IPluginLoader loader = new PluginLoader(outputLogger, options.Debug);
+         var fileCopier = new FileCopier(outputLogger, options);
+            IFileCopier copier = fileCopier;
+            
+            if (options.Delay > 0)
+            {
+                copier = new QueuedFileCopier(fileCopier, outputLogger, options);
+            }
 
-        IFileCopier copier = new FileCopier(outputLogger);
-
-        if(options.Delay > 0)
-        {
-            copier = new QueuedFileCopier();
-        }
-
-        IFileWatcher fileWatcher = new FileWatcher(copier, outputLogger);
-
-        loader.Subscribe((IPreCopyEventBroadcaster)copier, (IPostCopyEventBroadcaster)copier);
-        fileWatcher.Watch(options);
+            IFileWatcher fileWatcher = new FileWatcher(copier, outputLogger);
+            
+            loader.Subscribe((IPreCopyEventBroadcaster) copier, (IPostCopyEventBroadcaster) copier);
+            
+            fileWatcher.Watch(options);
 
     }
 }
